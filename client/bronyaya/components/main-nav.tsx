@@ -25,7 +25,7 @@ const MainNav = ({ items,children }: MainNavProps) => {
             <Link
               key={index}
               href={item.disabled ? "#" : item.href}
-              className={`${index === 6 ? '' : 'border-r-2'}  hover:text-accent shadow-xl w-[20rem] h-[4rem] m-0 flex justify-center items-center hover:bg-gray-200 hover:text-black transition-all duration-300 ease-in-out`}
+              className={`${index === 6 ? '' : ''}  hover:text-accent shadow-xl w-[20rem] h-[4rem] m-0 flex justify-center items-center hover:bg-gray-200 hover:text-black transition-all duration-300 ease-in-out`}
             >
               {item.title}
             </Link>

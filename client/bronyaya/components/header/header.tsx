@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       <div className="bg-black w-[95%] text-white flex justify-center items-center py-2   text-2xl">
-        <h1>{siteConfig.name}</h1>
+        {/* <h1>{siteConfig.name}</h1> */}
       </div>
       <div
         className=" w-[95%] h-[30rem] relative  bg-cover shadow-lg"

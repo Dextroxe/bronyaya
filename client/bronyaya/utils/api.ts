@@ -8,7 +8,7 @@ export const getAllInformation = async (uid: string) => {
   try {
     const res = await api.get(`/${uid}`, {
       headers:{
-        "User-Agent": "Bronyaya/1.0.0 "
+        "User-Agent": "bronyaya "
       },
       timeout: 3 * 60 * 1000,
     });

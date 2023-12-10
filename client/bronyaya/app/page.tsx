@@ -33,6 +33,7 @@ export default function Home() {
           className="rounded-lg text-center  h-16 w-[30em] bg-secondary"
           placeholder="804202517 "
           value={inputValue}
+          type="number"
           onChange={(event) => setInputValue(event.target.value)}
         />
         <button

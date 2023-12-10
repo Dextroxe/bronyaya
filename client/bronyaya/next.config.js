@@ -3,7 +3,7 @@ const path = require("path");
 
 const nextConfig = {
   images: {
-    domains: ["enka.network", "cdn.wanderer.moe"],
+    domains: ["enka.network", "cdn.wanderer.moe","genshindb.org"],
   },
 
   webpack: (config) => {

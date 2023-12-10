@@ -24,7 +24,7 @@ export const dashboard: DocsConfig = {
     },
     {
       title: "UID",
-      href: "/uid",
+      href: "/",
     },
     {
       title: "About",
