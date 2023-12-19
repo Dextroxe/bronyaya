@@ -16,7 +16,7 @@ const PlayerCard = ({ data, isError, isLoading, refetch }) => {
         <div className="bg-secondary h-full w-[40rem]  rounded-l-xl">
 
             <Image
-              src="https://genshindb.org/wp-content/uploads/2021/02/Albedo-Splash-Art.png"
+              src="https://cdn.wanderer.moe/genshin-impact/splash-art/zhongli.png"
               width={1900}
               height={1900}
               alt="img"
