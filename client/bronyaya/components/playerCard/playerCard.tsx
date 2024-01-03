@@ -1,64 +1,68 @@
+"use client";
+
 import { PuffLoader } from "react-spinners";
 import characters from "@/data/store/characters.json";
 import Image from "next/image";
 import Text from "../Canvas/text";
 import ArtifactsCard from "./ArtifactsCard";
 import StatsCard from "./StatsCard";
+import MainCard from "./MainCard";
+import en from "@/data/store/loc.json";
+import { useState } from "react";
 
 const PlayerCard = ({ data, isError, isLoading, refetch }) => {
-  // console.log(characters[10000038].Consts[0]);
+  // console.log(characters[10000038].Element);
+  // {console.log(characters[10000002].NameTextMapHash)}
+
   const heightArtifact = "h-[22rem] w-[30rem]";
   const cardStyle = "flex justify-between  items-center";
   const ImgArtifact = `h-full w-[10rem] bg-background rounded-xl p-1`;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const setAvatar = (index) => {
+    setCurrentIndex(index);
+  };
+
   if (!data) {
-    return (
-      <div className="container w-[80rem] h-[35rem]  mb-20 rounded-xl bg-accent flex gap-2 justify-start items-center">
-        <div className="bg-secondary h-full w-[40rem]  rounded-l-xl">
+    return <div>Uid Where</div>;
+  }
+
+  return (
+    <div className="flex justify-center flex-col items-center">
+      <div className="flex gap-2 p-2 mb-4 w-full h-20 justify-center items-center">
+        {data?.avatarInfoList?.map((avatar, index) => (
+          <div
+            key={avatar.avatarId}
+            onClick={() => setAvatar(index)}
+            className={`w-[6rem] h-14 ${
+              index === currentIndex ? 'bg-primary -top-2 ' : 'bg-secondary'}  flex items-center justify-center  cursor-pointer relative rounded-full gap-4`}
+          >
+      {console.log(avatar.equipList[avatar.equipList.length - 1].flat.icon)}
 
             <Image
-              src="https://cdn.wanderer.moe/genshin-impact/splash-art/zhongli.png"
-              width={1900}
-              height={1900}
+              src={`https://enka.network/ui/${
+                characters[avatar.avatarId].SideIconName
+              }.png`}
+              width={100}
+              height={100}
               alt="img"
-              className="overflow-hidden w-full h-full object-cover"
+              className="absolute -top-10 w-full"
             />
-        
-        </div>
-        <div className=" h-full w-[100rem] rounded-xl flex flex-row gap-2 justify-around">
-          <div className="flex flex-col gap-2 p-2">
-            <div className="bg-secondary h-[7rem] w-[25rem] rounded-xl">
-              <div className={`h-full w-[8rem] bg-background rounded-xl p-1`}>
-                <Image src="/icons/hp.png" width={20} height={20} alt="img" />
-              </div>
-            </div>
-            <div className="bg-secondary h-full w-[25rem] rounded-xl">
-              <div className="flex w-full flex-col h-full justify-around">
-                <StatsCard name={"HP"} effect={999999} />
-                <StatsCard name={"ATK"} effect={999999} />
-                <StatsCard name={"DEF"} effect={999999} />
-                <StatsCard name={"EM"} effect={999999} />
-                <StatsCard name={"ER"} effect={999999} />
-                <StatsCard name={"CR"} effect={999999} />
-                <StatsCard name={"CD"} effect={999999} />
-                <StatsCard name={"DMG Bonus"} effect={999999} />
-              </div>
-            </div>
           </div>
-          <div className="flex flex-col gap-2 p-2 justify-around">
-            <ArtifactsCard />
-            <ArtifactsCard />
-            <ArtifactsCard />
-            <ArtifactsCard />
-            <ArtifactsCard />
-          </div>
-        </div>
+        ))}
       </div>
-    );
-  }
-  return (
-    <>
-      <div>{data.playerInfo.nickname}</div>
-    </>
+      <div>
+        {data?.avatarInfoList?.map((avatar, index) => (
+          <div
+            key={avatar.avatarId}
+            style={{ display: index === currentIndex ? "block" : "none" }}
+          >
+            <MainCard key={avatar.avatarId} avatar={avatar} />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

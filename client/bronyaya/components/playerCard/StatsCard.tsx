@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 
 interface StatsCardProps {
@@ -17,9 +18,9 @@ const StatsCard = ({name,effect}:StatsCardProps) => {
                       height={20}
                       alt="img"
                     />
-                    <p>{name}</p>
+                    <p className="font-bold">{name}</p>
                   </div>
-                  <div className="flex">
+                  <div className="font-bold">
                     <p>{effect}</p>
                   </div>
                 </div>

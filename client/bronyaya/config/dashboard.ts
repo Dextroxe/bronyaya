@@ -15,7 +15,7 @@ export const dashboard: DocsConfig = {
       href: "/tcg",
     },
     {
-      title: "4.0 update",
+      title: "4.2 update",
       href: "/game_update",
     },
     {
