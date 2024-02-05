@@ -21,6 +21,7 @@ const Text:FC<TextProps> = ({text,font,img,height,width}) => {
 
 export default Text;
 
+// temp sizeing
 // fontSize: {
 //     sm: '0.750rem',
 //     base: '1rem',
