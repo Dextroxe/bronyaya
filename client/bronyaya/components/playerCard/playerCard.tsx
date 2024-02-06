@@ -11,7 +11,7 @@ import en from "@/data/store/loc.json";
 import { useState } from "react";
 
 const PlayerCard = ({ data, isError, isLoading, refetch }) => {
-  // console.log(characters[10000038].Element);
+
   // {console.log(characters[10000002].NameTextMapHash)}
 
   const heightArtifact = "h-[22rem] w-[30rem]";
@@ -38,7 +38,7 @@ const PlayerCard = ({ data, isError, isLoading, refetch }) => {
             className={`w-[6rem] h-14 ${
               index === currentIndex ? 'bg-primary -top-2 ' : 'bg-secondary'}  flex items-center justify-center  cursor-pointer relative rounded-full gap-4`}
           >
-      {console.log(avatar.equipList[avatar.equipList.length - 1].flat.icon)}
+      {/* {console.log(avatar.equipList[2].flat.icon)} */}
 
             <Image
               src={`https://enka.network/ui/${

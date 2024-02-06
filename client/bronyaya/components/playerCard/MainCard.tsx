@@ -85,11 +85,23 @@ const MainCard = ({ avatar }) => {
           </div>
         </div>
         <div className="flex flex-col gap-2 p-2 justify-evenly">
-          <ArtifactsCard />
-          <ArtifactsCard />
-          <ArtifactsCard />
-          <ArtifactsCard />
-          <ArtifactsCard />
+          {/* {console.log(avatar.equipList)} */}
+          {avatar.equipList.map((item,index) => {
+            // console.log(item?.flat?.reliquaryMainstat?.statValue);
+            
+            return(
+
+              index < 5 ? <ArtifactsCard key={index}  icon={item.flat.icon} 
+              subState={item?.flat?.reliquarySubstats}
+              mainState={item?.flat?.reliquaryMainstat?.statValue}
+              /> : '' 
+            )
+          })}
+          {/* <ArtifactsCard avatar={avatar} icon={avatar.equipList[0].flat.icon} />
+          <ArtifactsCard avatar={avatar} icon={avatar.equipList[1].flat.icon} />
+          <ArtifactsCard avatar={avatar} icon={avatar.equipList[2].flat.icon} />
+          <ArtifactsCard avatar={avatar} icon={avatar.equipList[3].flat.icon} />
+          <ArtifactsCard avatar={avatar} icon={avatar.equipList[4].flat.icon} /> */}
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import TanstackProvider from "@/components/providers/tanstackProvider";
 import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
 
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         <TanstackProvider>
           <Header/>
           {children}
+          <Footer/>
           </TanstackProvider>
       </body>
     </html>
